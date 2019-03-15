@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>hojun</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="/"/>
+  <updated>2019-03-15T06:53:04.198Z</updated>
+  <id>/</id>
+  
+  <author>
+    <name>hojun</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试Mathjax支持</title>
+    <link href="/2019/02/21/%E6%B5%8B%E8%AF%95Mathjax%E6%94%AF%E6%8C%81/"/>
+    <id>/2019/02/21/测试Mathjax支持/</id>
+    <published>2019-02-21T09:55:11.000Z</published>
+    <updated>2019-03-15T06:53:04.198Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;When $a \ne 0$, there are two solutions to (ax^2 + bx + c = 0) and they are&lt;br&gt;$$x = {-b \pm \sqrt{b^2-4ac} \over
+        
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Canvas</title>
+    <link href="/2019/02/18/Canvas/"/>
+    <id>/2019/02/18/Canvas/</id>
+    <published>2019-02-18T10:22:36.000Z</published>
+    <updated>2019-03-15T08:42:21.328Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;整理了一下canvas笔记。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Frontend" scheme="/categories/Frontend/"/>
+    
+    
+      <category term="Canvas" scheme="/tags/Canvas/"/>
+    
+      <category term="Html5" scheme="/tags/Html5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章15</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A015/"/>
+    <id>/2019/02/18/这是示例文章15/</id>
+    <published>2019-02-18T05:02:43.000Z</published>
+    <updated>2019-03-15T06:53:04.213Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章14</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A014/"/>
+    <id>/2019/02/18/这是示例文章14/</id>
+    <published>2019-02-18T05:02:40.000Z</published>
+    <updated>2019-03-15T06:53:04.211Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章13</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A013/"/>
+    <id>/2019/02/18/这是示例文章13/</id>
+    <published>2019-02-18T05:02:36.000Z</published>
+    <updated>2019-03-15T06:53:04.209Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章12</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A012/"/>
+    <id>/2019/02/18/这是示例文章12/</id>
+    <published>2019-02-18T05:02:33.000Z</published>
+    <updated>2019-03-15T06:53:04.206Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章11</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A011/"/>
+    <id>/2019/02/18/这是示例文章11/</id>
+    <published>2019-02-18T05:02:30.000Z</published>
+    <updated>2019-03-15T06:53:04.204Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章10</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A010/"/>
+    <id>/2019/02/18/这是示例文章10/</id>
+    <published>2019-02-18T05:02:26.000Z</published>
+    <updated>2019-03-15T06:53:04.202Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章9</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A09/"/>
+    <id>/2019/02/18/这是示例文章9/</id>
+    <published>2019-02-18T05:02:22.000Z</published>
+    <updated>2019-03-15T06:53:04.233Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章8</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A08/"/>
+    <id>/2019/02/18/这是示例文章8/</id>
+    <published>2019-02-18T05:02:19.000Z</published>
+    <updated>2019-03-15T06:53:04.230Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章7</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A07/"/>
+    <id>/2019/02/18/这是示例文章7/</id>
+    <published>2019-02-18T05:02:17.000Z</published>
+    <updated>2019-03-15T06:53:04.228Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章6</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A06/"/>
+    <id>/2019/02/18/这是示例文章6/</id>
+    <published>2019-02-18T05:02:14.000Z</published>
+    <updated>2019-03-15T06:53:04.224Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章5</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A05/"/>
+    <id>/2019/02/18/这是示例文章5/</id>
+    <published>2019-02-18T05:02:11.000Z</published>
+    <updated>2019-03-15T06:53:04.222Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章4</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A04/"/>
+    <id>/2019/02/18/这是示例文章4/</id>
+    <published>2019-02-18T05:02:08.000Z</published>
+    <updated>2019-03-15T06:53:04.220Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章3</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A03/"/>
+    <id>/2019/02/18/这是示例文章3/</id>
+    <published>2019-02-18T05:02:05.000Z</published>
+    <updated>2019-03-15T06:53:04.217Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章2</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A02/"/>
+    <id>/2019/02/18/这是示例文章2/</id>
+    <published>2019-02-18T05:02:02.000Z</published>
+    <updated>2019-03-15T06:53:04.215Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>这是示例文章1</title>
+    <link href="/2019/02/18/%E8%BF%99%E6%98%AF%E7%A4%BA%E4%BE%8B%E6%96%87%E7%AB%A01/"/>
+    <id>/2019/02/18/这是示例文章1/</id>
+    <published>2019-02-18T05:01:59.000Z</published>
+    <updated>2019-03-15T06:53:04.200Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>如何提升自我素养</title>
+    <link href="/2019/02/11/%E5%A6%82%E4%BD%95%E6%8F%90%E5%8D%87%E8%87%AA%E6%88%91%E7%B4%A0%E5%85%BB/"/>
+    <id>/2019/02/11/如何提升自我素养/</id>
+    <published>2019-02-11T06:31:50.000Z</published>
+    <updated>2019-03-11T08:46:36.440Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;很多女孩都说我是一个直男！！！&lt;/p&gt;
+&lt;p&gt;那么如何改变自己呢？&lt;/p&gt;
+&lt;p&gt;情操 + 情商 = 完美 ？&lt;/p&gt;
+&lt;div id=&quot;music163player&quot;&gt;&lt;br&gt;    &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;280&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=110761&amp;auto=0&amp;height=66&quot;&gt;&lt;br&gt;    &lt;/iframe&gt;&lt;br&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="Essay" scheme="/categories/Essay/"/>
+    
+    
+      <category term="For Myself" scheme="/tags/For-Myself/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo常用命令笔记</title>
+    <link href="/2019/01/29/hexo%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%AC%94%E8%AE%B0/"/>
+    <id>/2019/01/29/hexo常用命令笔记/</id>
+    <published>2019-01-29T10:18:54.000Z</published>
+    <updated>2019-03-08T04:05:14.578Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;重新整理了一下hexo命令&lt;/p&gt;
+&lt;div id=&quot;music163player&quot;&gt;&lt;br&gt;    &lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;280&quot; height=&quot;86&quot; src=&quot;//music.163.com/outchain/player?type=2&amp;id=167879&amp;auto=0&amp;height=66&quot;&gt;&lt;br&gt;    &lt;/iframe&gt;&lt;br&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="Essay" scheme="/categories/Essay/"/>
+    
+    
+      <category term="Hexo" scheme="/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java特性</title>
+    <link href="/2019/01/23/Java%E7%89%B9%E6%80%A7/"/>
+    <id>/2019/01/23/Java特性/</id>
+    <published>2019-01-23T04:03:17.000Z</published>
+    <updated>2019-03-08T04:05:13.713Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开始学习Java了&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Essay" scheme="/categories/Essay/"/>
+    
+      <category term="Java" scheme="/categories/Essay/Java/"/>
+    
+    
+      <category term="Java" scheme="/tags/Java/"/>
+    
+  </entry>
+  
+</feed>

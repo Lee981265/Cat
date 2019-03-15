@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  
+  <title itemprop="name">Echarts属性设置 | hojun</title>
+  
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+SerifMerriweather|Merriweather+Sans|Source+Code+Pro|Ubuntu:400,700|Noto+Serif+SC" media="all">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="stylesheet" id="saukra_css-css" href="/css/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="/css/lib.min.css" media="all">
+  <link rel="stylesheet" href="/css/font.css" media="all">
+  <link rel="stylesheet" href="/css/insight.css" media="all">
+  <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="all">
+  <link rel="stylesheet" href="/css/zoom.css" media="all">
+  <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+<!--   <link rel="stylesheet" id="saukra_css-css" href="https://2heng.xin/wp-content/cache/autoptimize/css/autoptimize_ad42a61f4c7d4bdd9f91afcff6b5dda5.css
+" type="text/css" media="all"> -->
+  <script>
+  /*Initial Variables*/
+  var mashiro_option = new Object();
+  var mashiro_global = new Object();
+  mashiro_option.NProgressON = true;
+  /* 
+   * 邮箱信息之类的东西可以填在这里，这些js变量基本都作用于sakura-app.js
+   * 这样的设置仅是为了方便在基于PHP开发的主题中设置js变量，既然移植到了Node上，我想或许可以精简这一逻辑吧
+   */
+  mashiro_option.email_domain = "";
+  mashiro_option.email_name = "";
+  mashiro_option.cookie_version_control = "";
+  mashiro_option.qzone_autocomplete = false;
+  mashiro_option.site_name = "さくら荘そのhojun";
+  mashiro_option.author_name = "hojun";
+  mashiro_option.site_url = "https://sakura.hojun.cn";
+  mashiro_option.v_appId = "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz";
+  mashiro_option.v_appKey = "mgOpfzbkHYqU92CV4IDlAUHQ";
+  mashiro_option.mathjax = "0";
+  mashiro_option.qq_api_url = "https://api.mashiro.top/qqinfo/"; 
+  mashiro_option.qq_avatar_api_url = "https://api.mashiro.top/qqinfo/";
+
+  // mashiro_option.jsdelivr_css_src = "https://cdn.jsdelivr.net/gh/moezx/cdn@3.4.5/css/lib.min.css";
+  // mashiro_option.float_player_on = true;
+
+  /*End of Initial Variables*/
+  </script>
+  <script type="text/javascript">
+  var bg = "https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(1).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(2).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(3).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(4).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(5).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(6).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(7).jpg.webp,https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/cover/(8).jpg.webp".split(",");
+  var bgindex = Math.floor(Math.random()*bg.length);
+  if (!!window.ActiveXObject || "ActiveXObject" in window) { //is IE?
+    alert('朋友，IE浏览器未适配哦~');
+  }
+  </script>
+  <style type="text/css">
+  .hljs-ln{border-collapse:collapse}.hljs-ln td{padding:0}.hljs-ln-n:before{content:attr(data-line-number)}
+  </style>
+  <style type="text/css">.site-top .lower nav{display:block !important;}.author-profile i,.post-like a,.post-share .show-share,.sub-text,.we-info a,span.sitename,.post-more i:hover,#pagination a:hover,.post-content a:hover,.float-content i:hover{color:#FE9600}.feature i,.download,.navigator i:hover,.links ul li:before,.ar-time i,span.ar-circle,.object,.comment .comment-reply-link,.siren-checkbox-radio:checked + .siren-checkbox-radioInput:after{background:#FE9600}::-webkit-scrollbar-thumb{background:#FE9600}.download,.navigator i:hover,.link-title,.links ul li:hover,#pagination a:hover,.comment-respond input[type='submit']:hover{border-color:#FE9600}.entry-content a:hover,.site-info a:hover,.comment h4 a,#comments-navi a.prev,#comments-navi a.next,.comment h4 a:hover,.site-top ul li a:hover,.entry-title a:hover,#archives-temp h3,span.page-numbers.current,.sorry li a:hover,.site-title a:hover,i.iconfont.js-toggle-search.iconsearch:hover,.comment-respond input[type='submit']:hover{color:#FE9600}.comments .comments-main{display:block !important;}.comments .comments-hidden{display:none !important;}background-position:center center;background-attachment:inherit;}
+  </style>
+</head>
+</html>
+<body class="page-template page-template-user page-template-page-analytics page-template-userpage-analytics-php page page-id-1297 chinese-font serif isWebKit">
+  <div class="scrollbar" id="bar">
+  </div>
+  <a href="#" class="cd-top faa-float animated"></a>
+  <section id="main-container">
+    <div class="headertop filter-dot">
+  <div id="banner_wave_1"></div>
+  <div id="banner_wave_2"></div>
+  <figure id="centerbg" class="centerbg">
+    <div class="focusinfo no-select">
+      <div class="header-tou">
+        <a href="https://sakura.hojun.cn">
+          <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+        </a>
+      </div>
+      <div class="header-info">
+        <p>Live your life with passion! With some drive!</p>
+        <div class="top-social_v2">
+          <li id="bg-pre">
+            <img class="flipx" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+          
+            
+              
+                <li>
+                  <a href="http://github.com/honjun" target="_blank" class="social-github" title="github">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/github.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="sina">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/sina.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="wangyiyun">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wangyiyun.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="zhihu">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/zhihu.png">
+                  </a>
+                </li>
+              
+            
+              
+                <li>
+                  <a href="http://weibo.com/mashirozx?is_all=1" target="_blank" class="social-github" title="email">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/email.svg">
+                  </a>
+                </li>
+              
+            
+              
+                <li class="wechat">
+                  <a href="/#">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/social/wechat.png">
+                  </a>
+                  <div class="wechatInner">
+                    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/wechat.jpg">
+                  </div>
+                </li>
+              
+            
+          
+          <li id="bg-next">
+            <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/next-b.svg">
+          </li>
+        </div>
+      </div>
+    </div>
+  </figure>
+  <div id="video-container" style>
+    <video style="object-fit: fill" id="bgvideo" class="video" video-name src width="auto" preload="auto">
+    </video>
+    <div id="video-btn" class="loadvideo videolive">
+    </div>
+    <div id="video-add">
+    </div>
+    <div class="video-stu">
+    </div>
+  </div>
+  <div class="headertop-down faa-float animated" onclick="headertop_down()">
+    <span>
+      <i class="fa fa-chevron-down" aria-hidden="true">
+      </i>
+    </span>
+  </div>
+</div>
+    <div id="page" class="site wrapper">
+      <header class="site-header no-select gizle sabit" role="banner">
+  <div class="site-top">
+    <div class="site-branding">
+      <span class="site-title">
+        <span class="logolink moe-mashiro">
+          <a href="/">
+            <span class="sakurasono">さくら荘その</span>
+            <span class="shironeko">hojun</span>
+          </a>
+        </span>
+      </span>
+    </div>
+    <div class="searchbox search-form-submit">
+      <i class="iconfont js-toggle-search iconsearch icon-search">
+      </i>
+    </div>
+    <div id="show-nav" class="showNav mobile-fit">
+      <div class="line line1">
+      </div>
+      <div class="line line2">
+      </div>
+      <div class="line line3">
+      </div>
+    </div>
+    <div class="lower-cantiner">
+      <div class="lower">
+        <nav class="mobile-fit-control hide">
+          <ul id="menu-new" class="menu">
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+                    首页
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/archives">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+                    归档
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/categories/技术/">
+                          <i class="fa fa-code" aria-hidden="true"></i>
+                          技术
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/生活/">
+                          <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                          生活
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/资源/">
+                          <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                          资源
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/随想/">
+                          <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                          随想
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/categories/转载/">
+                          <i class="fa fa-book" aria-hidden="true"></i>
+                          转载
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="javascript:;">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+                    清单
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/tags/悦读/">
+                          <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                          书单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/bangumi/">
+                          <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                          番组
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/music/">
+                          <i class="fa fa-headphones" aria-hidden="true"></i>
+                          歌单
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/tags/图集/">
+                          <i class="fa fa-photo" aria-hidden="true"></i>
+                          图集
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/comment/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+                    留言板
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/links/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+                    友人帐
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/donate/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+                    赞赏
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+                    关于
+                  </span>
+                </a>
+                
+                  <ul class="sub-menu">
+                    
+                      <li>
+                        <a href="/about/">
+                          <i class="fa fa-meetup" aria-hidden="true"></i>
+                          我？
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/theme-sakura/">
+                          <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                          主题
+                        </a>
+                      </li>
+                    
+                      <li>
+                        <a href="/lab/">
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          Lab
+                        </a>
+                      </li>
+                    
+                  </ul>
+                
+              </li>
+            
+              <li>
+                <a href="/client/">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+                    客户端
+                  </span>
+                </a>
+                
+              </li>
+            
+              <li>
+                <a href="/atom.xml">
+                  <span class="faa-parent animated-hover">
+                    <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+                    RSS
+                  </span>
+                </a>
+                
+              </li>
+            
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+        <link rel="stylesheet" type="text/css" href="/css/sharejs.css">
+  <div class="pattern-center-blank"></div>
+  
+  <div id="content" class="site-content"> <div id="primary" class="content-area">
+    <main id="main" class="site-main" role="main">
+
+      <article id="post-1" class="post-1 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+        <!--<div class="toc-entry-content"><!-- 套嵌目录使用（主要为了支援评论）-->
+        
+          <header class="entry-header">
+            <h1 class="entry-title">Echarts属性设置</h1>
+            <p class="entry-census">2018-7-12 17:07</p>
+            <hr>
+          </header>
+        
+        <div class="entry-content">
+          <p>Echarts:</p>
+<ul>
+<li>千万级数据可视化渲染能力</li>
+<li>SVG + Canvas 双引擎动力更佳</li>
+<li>数据样式分离及扁平配置让开发更便捷</li>
+<li>首创无障碍访问支持</li>
+<li>微信小程序、PPT，哪里都能用<a id="more"></a>
+</li>
+</ul>
+<h2 id="全图默认背景"><a href="#全图默认背景" class="headerlink" title="全图默认背景"></a>全图默认背景</h2><pre><code class="js">backgroundColor: ‘rgba(0,0,0,0)’,
+</code></pre>
+<h2 id="默认色板"><a href="#默认色板" class="headerlink" title="默认色板"></a>默认色板</h2><pre><code class="js">color: [&#39;#ff7f50&#39;,&#39;#87cefa&#39;,&#39;#da70d6&#39;,&#39;#32cd32&#39;,&#39;#6495ed&#39;,
+    &#39;#ff69b4&#39;,&#39;#ba55d3&#39;,&#39;#cd5c5c&#39;,&#39;#ffa500&#39;,&#39;#40e0d0&#39;,
+    &#39;#1e90ff&#39;,&#39;#ff6347&#39;,&#39;#7b68ee&#39;,&#39;#00fa9a&#39;,&#39;#ffd700&#39;,
+    &#39;#6699FF&#39;,&#39;#ff6666&#39;,&#39;#3cb371&#39;,&#39;#b8860b&#39;,&#39;#30e0e0&#39;],
+</code></pre>
+<h2 id="图表标题"><a href="#图表标题" class="headerlink" title="图表标题"></a>图表标题</h2><pre><code class="js">title: {
+    x: &#39;left&#39;,                // 水平安放位置，默认为左对齐，可选为：
+                      // &#39;center&#39; ¦ &#39;left&#39; ¦ &#39;right&#39;
+                      // ¦ {number}（x坐标，单位px）
+    y: &#39;top&#39;,             // 垂直安放位置，默认为全图顶端，可选为：
+                      // &#39;top&#39; ¦ &#39;bottom&#39; ¦ &#39;center&#39;
+                      // ¦ {number}（y坐标，单位px）
+    //textAlign: null          // 水平对齐方式，默认根据x设置自动调整
+    backgroundColor: &#39;rgba(0,0,0,0)&#39;,
+    borderColor: &#39;#ccc&#39;,          // 标题边框颜色
+    borderWidth: 0,           // 标题边框线宽，单位px，默认为0（无边框）
+    padding: 5,             // 标题内边距，单位px，默认各方向内边距为5，
+                              // 接受数组分别设定上右下左边距，同css
+    itemGap: 10,             // 主副标题纵向间隔，单位px，默认为10，
+    textStyle: {
+        fontSize: 18,
+        fontWeight: &#39;bolder&#39;,
+        color: &#39;#333&#39;                             // 主标题文字颜色
+    },
+    subtextStyle: {
+        color: &#39;#aaa&#39;                            // 副标题文字颜色
+    }
+},
+</code></pre>
+<h2 id="图例"><a href="#图例" class="headerlink" title="图例"></a>图例</h2><pre><code class="js">legend: {
+    orient: &#39;horizontal&#39;,          // 布局方式，默认为水平布局，可选为：
+                       // &#39;horizontal&#39; ¦ &#39;vertical&#39;
+    x: &#39;center&#39;,                // 水平安放位置，默认为全图居中，可选为：
+                              // &#39;center&#39; ¦ &#39;left&#39; ¦ &#39;right&#39;
+                       // ¦ {number}（x坐标，单位px）
+    y: &#39;top&#39;,              // 垂直安放位置，默认为全图顶端，可选为：
+                       // &#39;top&#39; ¦ &#39;bottom&#39; ¦ &#39;center&#39;
+                       // ¦ {number}（y坐标，单位px）
+    backgroundColor: &#39;rgba(0,0,0,0)&#39;,
+    borderColor: &#39;#ccc&#39;,            // 图例边框颜色
+    borderWidth: 0,                // 图例边框线宽，单位px，默认为0（无边框）
+    padding: 5,                  // 图例内边距，单位px，默认各方向内边距为5，
+                               // 接受数组分别设定上右下左边距，同css
+    itemGap: 10,              // 各个item之间的间隔，单位px，默认为10，
+                        // 横向布局时为水平间隔，纵向布局时为纵向间隔
+    itemWidth: 20,             // 图例图形宽度
+    itemHeight: 14,            // 图例图形高度
+    textStyle: {
+        color: &#39;#333&#39;                              // 图例文字颜色
+    }
+},
+</code></pre>
+<h2 id="值域"><a href="#值域" class="headerlink" title="值域"></a>值域</h2><pre><code class="js">dataRange: {
+    orient: &#39;vertical&#39;,             // 布局方式，默认为垂直布局，可选为：
+                        // &#39;horizontal&#39; ¦ &#39;vertical&#39;
+    x: &#39;left&#39;,                   // 水平安放位置，默认为全图左对齐，可选为：
+                        // &#39;center&#39; ¦ &#39;left&#39; ¦ &#39;right&#39;
+                        // ¦ {number}（x坐标，单位px）
+    y: &#39;bottom&#39;,                  // 垂直安放位置，默认为全图底部，可选为：
+                         // &#39;top&#39; ¦ &#39;bottom&#39; ¦ &#39;center&#39;
+                         // ¦ {number}（y坐标，单位px）
+    backgroundColor: &#39;rgba(0,0,0,0)&#39;,
+    borderColor: &#39;#ccc&#39;,             // 值域边框颜色
+    borderWidth: 0,                 // 值域边框线宽，单位px，默认为0（无边框）
+    padding: 5,                    // 值域内边距，单位px，默认各方向内边距为5，
+                         // 接受数组分别设定上右下左边距，同css
+    itemGap: 10,               // 各个item之间的间隔，单位px，默认为10，
+                        // 横向布局时为水平间隔，纵向布局时为纵向间隔
+    itemWidth: 20,             // 值域图形宽度，线性渐变水平布局宽度为该值 * 10
+    itemHeight: 14,            // 值域图形高度，线性渐变垂直布局高度为该值 * 10
+    splitNumber: 5,            // 分割段数，默认为5，为0时为线性渐变
+    color:[&#39;#1e90ff&#39;,&#39;#f0ffff&#39;],//颜色
+    //text:[&#39;高&#39;,&#39;低&#39;],              // 文本，默认为数值文本
+    textStyle: {
+        color: &#39;#333&#39;                                // 值域文字颜色
+    }
+},
+</code></pre>
+<h2 id="工具箱"><a href="#工具箱" class="headerlink" title="工具箱"></a>工具箱</h2><pre><code class="js">toolbox: {
+    orient: &#39;horizontal&#39;,            // 布局方式，默认为水平布局，可选为：
+                        // &#39;horizontal&#39; ¦ &#39;vertical&#39;
+    x: &#39;right&#39;,              // 水平安放位置，默认为全图右对齐，可选为：
+                        // &#39;center&#39; ¦ &#39;left&#39; ¦ &#39;right&#39;
+                        // ¦ {number}（x坐标，单位px）
+    y: &#39;top&#39;,               // 垂直安放位置，默认为全图顶端，可选为：
+                        // &#39;top&#39; ¦ &#39;bottom&#39; ¦ &#39;center&#39;
+                        // ¦ {number}（y坐标，单位px）
+    color : [&#39;#1e90ff&#39;,&#39;#22bb22&#39;,&#39;#4b0082&#39;,&#39;#d2691e&#39;],
+    backgroundColor: &#39;rgba(0,0,0,0)&#39;,    // 工具箱背景颜色
+    borderColor: &#39;#ccc&#39;,             // 工具箱边框颜色
+    borderWidth: 0,                 // 工具箱边框线宽，单位px，默认为0（无边框）
+    padding: 5,                    // 工具箱内边距，单位px，默认各方向内边距为5，
+                                // 接受数组分别设定上右下左边距，同css
+    itemGap: 10,                  // 各个item之间的间隔，单位px，默认为10，
+                                // 横向布局时为水平间隔，纵向布局时为纵向间隔
+    itemSize: 16,              // 工具箱图形宽度
+    featureImageIcon : {},            // 自定义图片icon
+    featureTitle : {
+        mark : &#39;辅助线开关&#39;,
+        markUndo : &#39;删除辅助线&#39;,
+        markClear : &#39;清空辅助线&#39;,
+        dataZoom : &#39;区域缩放&#39;,
+        dataZoomReset : &#39;区域缩放后退&#39;,
+        dataView : &#39;数据视图&#39;,
+        lineChart : &#39;折线图切换&#39;,
+        barChart : &#39;柱形图切换&#39;,
+        restore : &#39;还原&#39;,
+        saveAsImage : &#39;保存为图片&#39;
+    }
+},
+</code></pre>
+<h2 id="提示框"><a href="#提示框" class="headerlink" title="提示框"></a>提示框</h2><pre><code class="js">tooltip: {
+    trigger: &#39;item&#39;,           // 触发类型，默认数据触发，见下图，可选为：&#39;item&#39; ¦ &#39;axis&#39;
+    showDelay: 20,             // 显示延迟，添加显示延迟可以避免频繁切换，单位ms
+    hideDelay: 100,            // 隐藏延迟，单位ms
+    transitionDuration : 0.4,         // 动画变换时间，单位s
+    backgroundColor: &#39;rgba(0,0,0,0.7)&#39;,  // 提示背景颜色，默认为透明度为0.7的黑色
+    borderColor: &#39;#333&#39;,            // 提示边框颜色
+    borderRadius: 4,                // 提示边框圆角，单位px，默认为4
+    borderWidth: 0,                // 提示边框线宽，单位px，默认为0（无边框）
+    padding: 5,                   // 提示内边距，单位px，默认各方向内边距为5，
+                                // 接受数组分别设定上右下左边距，同css
+    axisPointer : {                 // 坐标轴指示器，坐标轴触发有效
+        type : &#39;line&#39;,         // 默认为直线，可选为：&#39;line&#39; | &#39;shadow&#39;
+        lineStyle : {          // 直线指示器样式设置
+            color: &#39;#48b&#39;,
+            width: 2,
+            type: &#39;solid&#39;
+        },
+        shadowStyle : {              // 阴影指示器样式设置
+            width: &#39;auto&#39;,         // 阴影大小
+            color: &#39;rgba(150,150,150,0.3)&#39;  // 阴影颜色
+        }
+    },
+    textStyle: {
+        color: &#39;#fff&#39;
+    }
+},
+</code></pre>
+<h2 id="区域缩放控制器"><a href="#区域缩放控制器" class="headerlink" title="区域缩放控制器"></a>区域缩放控制器</h2><pre><code class="js">dataZoom: {
+    orient: &#39;horizontal&#39;,         // 布局方式，默认为水平布局，可选为：
+                             // &#39;horizontal&#39; ¦ &#39;vertical&#39;
+    // x: {number},              // 水平安放位置，默认为根据grid参数适配，可选为：
+                             // {number}（x坐标，单位px）
+    // y: {number},              // 垂直安放位置，默认为根据grid参数适配，可选为：
+                             // {number}（y坐标，单位px）
+    // width: {number},           // 指定宽度，横向布局时默认为根据grid参数适配
+    // height: {number},          // 指定高度，纵向布局时默认为根据grid参数适配
+    backgroundColor: &#39;rgba(0,0,0,0)&#39;,    // 背景颜色
+    dataBackgroundColor: &#39;#eee&#39;,       // 数据背景颜色
+    fillerColor: &#39;rgba(144,197,237,0.2)&#39;, // 填充颜色
+    handleColor: &#39;rgba(70,130,180,0.8)&#39;       // 手柄颜色
+},
+</code></pre>
+<h2 id="网格"><a href="#网格" class="headerlink" title="网格"></a>网格</h2><pre><code class="js">grid: {
+    x: 80,
+    y: 60,
+    x2: 80,
+    y2: 60,
+    // width: {totalWidth} - x - x2,
+    // height: {totalHeight} - y - y2,
+    backgroundColor: &#39;rgba(0,0,0,0)&#39;,
+    borderWidth: 1,
+    borderColor: &#39;#ccc&#39;
+},
+</code></pre>
+<h2 id="类目轴"><a href="#类目轴" class="headerlink" title="类目轴"></a>类目轴</h2><pre><code class="js">categoryAxis: {
+    position: &#39;bottom&#39;,        // 位置
+    nameLocation: &#39;end&#39;,      // 坐标轴名字位置，支持&#39;start&#39; | &#39;end&#39;
+    boundaryGap: true,     // 类目起始和结束两端空白策略
+    axisLine: {            // 坐标轴线
+        show: true,         // 默认显示，属性show控制显示与否
+        lineStyle: {        // 属性lineStyle控制线条样式
+            color: &#39;#48b&#39;,
+            width: 2,
+            type: &#39;solid&#39;
+        }
+    },
+    axisTick: {            // 坐标轴小标记
+        show: true,       // 属性show控制显示与否，默认不显示
+        interval: &#39;auto&#39;,
+        // onGap: null,
+        inside : false,        // 控制小标记是否在grid里
+        length :5,         // 属性length控制线长
+        lineStyle: {       // 属性lineStyle控制线条样式
+            color: &#39;#333&#39;,
+            width: 1
+        }
+    },
+    axisLabel: {           // 坐标轴文本标签，详见axis.axisLabel
+        show: true,
+        interval: &#39;auto&#39;,
+        rotate: 0,
+        margin: 8,
+        // formatter: null,
+        textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+            color: &#39;#333&#39;
+        }
+    },
+    splitLine: {                // 分隔线
+        show: true,        // 默认显示，属性show控制显示与否
+        // onGap: null,
+        lineStyle: {       // 属性lineStyle（详见lineStyle）控制线条样式
+            color: [&#39;#ccc&#39;],
+            width: 1,
+            type: &#39;solid&#39;
+        }
+    },
+    splitArea: {                // 分隔区域
+        show: false,       // 默认不显示，属性show控制显示与否
+        // onGap: null,
+        areaStyle: {        // 属性areaStyle（详见areaStyle）控制区域样式
+            color: [&#39;rgba(250,250,250,0.3)&#39;,&#39;rgba(200,200,200,0.3)&#39;]
+        }
+    }
+},
+</code></pre>
+<h2 id="数值型坐标轴默认参数"><a href="#数值型坐标轴默认参数" class="headerlink" title="数值型坐标轴默认参数"></a>数值型坐标轴默认参数</h2><pre><code class="js">valueAxis: {
+    position: &#39;left&#39;,      // 位置
+    nameLocation: &#39;end&#39;,     // 坐标轴名字位置，支持&#39;start&#39; | &#39;end&#39;
+    nameTextStyle: {},     // 坐标轴文字样式，默认取全局样式
+    boundaryGap: [0, 0],    // 数值起始和结束两端空白策略
+    splitNumber: 5,        // 分割段数，默认为5
+    axisLine: {             // 坐标轴线
+        show: true,      // 默认显示，属性show控制显示与否
+        lineStyle: {      // 属性lineStyle控制线条样式
+            color: &#39;#48b&#39;,
+            width: 2,
+            type: &#39;solid&#39;
+        }
+    },
+    axisTick: {            // 坐标轴小标记
+        show: false,       // 属性show控制显示与否，默认不显示
+        inside : false,      // 控制小标记是否在grid里
+        length :5,          // 属性length控制线长
+        lineStyle: {       // 属性lineStyle控制线条样式
+            color: &#39;#333&#39;,
+            width: 1
+        }
+    },
+    axisLabel: {           // 坐标轴文本标签，详见axis.axisLabel
+        show: true,
+        rotate: 0,
+        margin: 8,
+        // formatter: null,
+        textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+            color: &#39;#333&#39;
+        }
+    },
+    splitLine: {                // 分隔线
+        show: true,        // 默认显示，属性show控制显示与否
+        lineStyle: {          // 属性lineStyle（详见lineStyle）控制线条样式
+            color: [&#39;#ccc&#39;],
+            width: 1,
+            type: &#39;solid&#39;
+        }
+    },
+    splitArea: {                // 分隔区域
+        show: false,       // 默认不显示，属性show控制显示与否
+        areaStyle: {       // 属性areaStyle（详见areaStyle）控制区域样式
+            color: [&#39;rgba(250,250,250,0.3)&#39;,&#39;rgba(200,200,200,0.3)&#39;]
+        }
+    }
+},
+
+
+polar : {
+    center : [&#39;50%&#39;, &#39;50%&#39;],    // 默认全局居中
+    radius : &#39;75%&#39;,
+    startAngle : 90,
+    splitNumber : 5,
+    name : {
+        show: true,
+        textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+            color: &#39;#333&#39;
+        }
+    },
+    axisLine: {            // 坐标轴线
+        show: true,         // 默认显示，属性show控制显示与否
+        lineStyle: {        // 属性lineStyle控制线条样式
+            color: &#39;#ccc&#39;,
+            width: 1,
+            type: &#39;solid&#39;
+        }
+    },
+    axisLabel: {                // 坐标轴文本标签，详见axis.axisLabel
+        show: false,
+        textStyle: {       // 其余属性默认使用全局文本样式，详见TEXTSTYLE
+            color: &#39;#333&#39;
+        }
+    },
+    splitArea : {
+        show : true,
+        areaStyle : {
+            color: [&#39;rgba(250,250,250,0.3)&#39;,&#39;rgba(200,200,200,0.3)&#39;]
+        }
+    },
+    splitLine : {
+        show : true,
+        lineStyle : {
+            width : 1,
+            color : &#39;#ccc&#39;
+        }
+    }
+},
+</code></pre>
+<h2 id="柱形图默认参数"><a href="#柱形图默认参数" class="headerlink" title="柱形图默认参数"></a>柱形图默认参数</h2><pre><code class="js">bar: {
+    barMinHeight: 0,            // 最小高度改为0
+    // barWidth: null,        // 默认自适应
+    barGap: &#39;30%&#39;,           // 柱间距离，默认为柱形宽度的30%，可设固定值
+    barCategoryGap : &#39;20%&#39;,   // 类目间柱形距离，默认为类目间距的20%，可设固定值
+    itemStyle: {
+        normal: {
+            // color: &#39;各异&#39;,
+            barBorderColor: &#39;#fff&#39;,         // 柱条边线
+            barBorderRadius: 0,            // 柱条边线圆角，单位px，默认为0
+            barBorderWidth: 1,             // 柱条边线线宽，单位px，默认为1
+            label: {
+                show: false
+                                         // position: 默认自适应，水平布局为&#39;top&#39;，垂直布局为&#39;right&#39;，可选为
+                                         // &#39;inside&#39;|&#39;left&#39;|&#39;right&#39;|&#39;top&#39;|&#39;bottom&#39;
+                                        // textStyle: null // 默认使用全局文本样式，详见TEXTSTYLE
+            }
+        },
+        emphasis: {
+            // color: &#39;各异&#39;,
+            barBorderColor: &#39;rgba(0,0,0,0)&#39;,            // 柱条边线
+            barBorderRadius: 0,                // 柱条边线圆角，单位px，默认为0
+            barBorderWidth: 1,                     // 柱条边线线宽，单位px，默认为1
+            label: {
+                show: false
+                // position: 默认自适应，水平布局为&#39;top&#39;，垂直布局为&#39;right&#39;，可选为
+                //           &#39;inside&#39;|&#39;left&#39;|&#39;right&#39;|&#39;top&#39;|&#39;bottom&#39;
+                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+            }
+        }
+    }
+},
+</code></pre>
+<h2 id="折线图默认参数"><a href="#折线图默认参数" class="headerlink" title="折线图默认参数"></a>折线图默认参数</h2><pre><code class="js">line: {
+    itemStyle: {
+        normal: {
+            // color: 各异,
+            label: {
+                show: false
+                // position: 默认自适应，水平布局为&#39;top&#39;，垂直布局为&#39;right&#39;，可选为
+                //           &#39;inside&#39;|&#39;left&#39;|&#39;right&#39;|&#39;top&#39;|&#39;bottom&#39;
+                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+            },
+            lineStyle: {
+                width: 2,
+                type: &#39;solid&#39;,
+                shadowColor : &#39;rgba(0,0,0,0)&#39;, //默认透明
+                shadowBlur: 5,
+                shadowOffsetX: 3,
+                shadowOffsetY: 3
+            }
+        },
+        emphasis: {
+            // color: 各异,
+            label: {
+                show: false
+                // position: 默认自适应，水平布局为&#39;top&#39;，垂直布局为&#39;right&#39;，可选为
+                //           &#39;inside&#39;|&#39;left&#39;|&#39;right&#39;|&#39;top&#39;|&#39;bottom&#39;
+                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+            }
+        }
+    },
+    //smooth : false,
+    //symbol: null,             // 拐点图形类型
+    symbolSize: 2,          // 拐点图形大小
+    //symbolRotate : null,       // 拐点图形旋转控制
+    showAllSymbol: false                   // 标志图形默认只有主轴显示（随主轴标签间隔隐藏策略）
+},
+</code></pre>
+<h2 id="K线图默认参数"><a href="#K线图默认参数" class="headerlink" title="K线图默认参数"></a>K线图默认参数</h2><pre><code class="js">k: {
+    // barWidth : null              // 默认自适应
+    // barMaxWidth : null           // 默认自适应
+    itemStyle: {
+        normal: {
+            color: &#39;#fff&#39;,      // 阳线填充颜色
+            color0: &#39;#00aa11&#39;,  // 阴线填充颜色
+            lineStyle: {
+                width: 1,
+                color: &#39;#ff3200&#39;,    // 阳线边框颜色
+                color0: &#39;#00aa11&#39;          // 阴线边框颜色
+            }
+        },
+        emphasis: {
+            // color: 各异,
+            // color0: 各异
+        }
+    }
+},
+</code></pre>
+<h2 id="散点图默认参数"><a href="#散点图默认参数" class="headerlink" title="散点图默认参数"></a>散点图默认参数</h2><pre><code class="js">scatter: {
+    //symbol: null,         // 图形类型
+    symbolSize: 4,       // 图形大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
+    //symbolRotate : null,   // 图形旋转控制
+    large: false,        // 大规模散点图
+    largeThreshold: 2000,   // 大规模阀值，large为true且数据量&gt;largeThreshold才启用大规模模式
+    itemStyle: {
+        normal: {
+            // color: 各异,
+            label: {
+                show: false
+                // position: 默认自适应，水平布局为&#39;top&#39;，垂直布局为&#39;right&#39;，可选为
+                //           &#39;inside&#39;|&#39;left&#39;|&#39;right&#39;|&#39;top&#39;|&#39;bottom&#39;
+                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+            }
+        },
+        emphasis: {
+            // color: &#39;各异&#39;
+            label: {
+                show: false
+                // position: 默认自适应，水平布局为&#39;top&#39;，垂直布局为&#39;right&#39;，可选为
+                //           &#39;inside&#39;|&#39;left&#39;|&#39;right&#39;|&#39;top&#39;|&#39;bottom&#39;
+                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+            }
+        }
+    }
+},
+</code></pre>
+<h2 id="雷达图默认参数"><a href="#雷达图默认参数" class="headerlink" title="雷达图默认参数"></a>雷达图默认参数</h2><pre><code class="js">radar : {
+    itemStyle: {
+        normal: {
+            // color: 各异,
+            label: {
+                show: false
+            },
+            lineStyle: {
+                width: 2,
+                type: &#39;solid&#39;
+            }
+        },
+        emphasis: {
+            // color: 各异,
+            label: {
+                show: false
+            }
+        }
+    },
+    //symbol: null,          // 拐点图形类型
+    symbolSize: 2          // 可计算特性参数，空数据拖拽提示图形大小
+    //symbolRotate : null,    // 图形旋转控制
+},
+</code></pre>
+<h2 id="饼图默认参数"><a href="#饼图默认参数" class="headerlink" title="饼图默认参数"></a>饼图默认参数</h2><pre><code class="js">pie: {
+    center : [&#39;50%&#39;, &#39;50%&#39;],          // 默认全局居中
+    radius : [0, &#39;75%&#39;],
+    clockWise : false,             // 默认逆时针
+    startAngle: 90,
+    minAngle: 0,                 // 最小角度改为0
+    selectedOffset: 10,         // 选中是扇区偏移量
+    itemStyle: {
+        normal: {
+            // color: 各异,
+            borderColor: &#39;#fff&#39;,
+            borderWidth: 1,
+            label: {
+                show: true,
+                position: &#39;outer&#39;
+                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+            },
+            labelLine: {
+                show: true,
+                length: 20,
+                lineStyle: {
+                    // color: 各异,
+                    width: 1,
+                    type: &#39;solid&#39;
+                }
+            }
+        },
+        emphasis: {
+            // color: 各异,
+            borderColor: &#39;rgba(0,0,0,0)&#39;,
+            borderWidth: 1,
+            label: {
+                show: false
+                // position: &#39;outer&#39;
+                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+            },
+            labelLine: {
+                show: false,
+                length: 20,
+                lineStyle: {
+                    // color: 各异,
+                    width: 1,
+                    type: &#39;solid&#39;
+                }
+            }
+        }
+    }
+},
+</code></pre>
+<h2 id="地图默认参数"><a href="#地图默认参数" class="headerlink" title="地图默认参数"></a>地图默认参数</h2><pre><code class="js">map: {
+    mapType: &#39;china&#39;,   // 各省的mapType暂时都用中文
+    mapLocation: {
+        x : &#39;center&#39;,
+        y : &#39;center&#39;
+        // width    // 自适应
+        // height   // 自适应
+    },
+    showLegendSymbol : true,       // 显示图例颜色标识（系列标识的小圆点），存在legend时生效
+    itemStyle: {
+        normal: {
+            // color: 各异,
+            borderColor: &#39;#fff&#39;,
+            borderWidth: 1,
+            areaStyle: {
+                color: &#39;#ccc&#39;   //rgba(135,206,250,0.8)
+            },
+            label: {
+                show: false,
+                textStyle: {
+                    color: &#39;rgba(139,69,19,1)&#39;
+                }
+            }
+        },
+        emphasis: {                // 也是选中样式
+            // color: 各异,
+            borderColor: &#39;rgba(0,0,0,0)&#39;,
+            borderWidth: 1,
+            areaStyle: {
+                color: &#39;rgba(255,215,0,0.8)&#39;
+            },
+            label: {
+                show: false,
+                textStyle: {
+                    color: &#39;rgba(139,69,19,1)&#39;
+                }
+            }
+        }
+    }
+},
+</code></pre>
+<h2 id="关系图默认参数"><a href="#关系图默认参数" class="headerlink" title="关系图默认参数"></a>关系图默认参数</h2><pre><code class="js">force : {
+    // 数据map到圆的半径的最小值和最大值
+    minRadius : 10,
+    maxRadius : 20,
+    density : 1.0,
+    attractiveness : 1.0,
+    // 初始化的随机大小位置
+    initSize : 300,
+    // 向心力因子，越大向心力越大
+    centripetal : 1,
+    // 冷却因子
+    coolDown : 0.99,
+    // 分类里如果有样式会覆盖节点默认样式
+    itemStyle: {
+        normal: {
+            // color: 各异,
+            label: {
+                show: false
+                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+            },
+            nodeStyle : {
+                brushType : &#39;both&#39;,
+                color : &#39;#f08c2e&#39;,
+                strokeColor : &#39;#5182ab&#39;
+            },
+            linkStyle : {
+                strokeColor : &#39;#5182ab&#39;
+            }
+        },
+        emphasis: {
+            // color: 各异,
+            label: {
+                show: false
+                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+            },
+            nodeStyle : {},
+            linkStyle : {}
+        }
+    }
+},
+</code></pre>
+<h2 id="弦图"><a href="#弦图" class="headerlink" title="弦图"></a>弦图</h2><pre><code class="js">chord : {
+    radius : [&#39;65%&#39;, &#39;75%&#39;],
+    center : [&#39;50%&#39;, &#39;50%&#39;],
+    padding : 2,
+    sort : &#39;none&#39;,   // can be &#39;none&#39;, &#39;ascending&#39;, &#39;descending&#39;
+    sortSub : &#39;none&#39;, // can be &#39;none&#39;, &#39;ascending&#39;, &#39;descending&#39;
+    startAngle : 90,
+    clockWise : false,
+    showScale : false,
+    showScaleText : false,
+    itemStyle : {
+        normal : {
+            label : {
+                show : true
+                // textStyle: null      // 默认使用全局文本样式，详见TEXTSTYLE
+            },
+            lineStyle : {
+                width : 0,
+                color : &#39;#000&#39;
+            },
+            chordStyle : {
+                lineStyle : {
+                    width : 1,
+                    color : &#39;#666&#39;
+                }
+            }
+        },
+        emphasis : {
+            lineStyle : {
+                width : 0,
+                color : &#39;#000&#39;
+            },
+            chordStyle : {
+                lineStyle : {
+                    width : 2,
+                    color : &#39;#333&#39;
+                }
+            }
+        }
+    }
+},
+</code></pre>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><pre><code class="js">island: {
+    r: 15,
+    calculateStep: 0.1  // 滚轮可计算步长 0.1 = 10%
+},
+
+markPoint : {
+    symbol: &#39;pin&#39;,         // 标注类型
+    symbolSize: 10,            // 标注大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
+    //symbolRotate : null, // 标注旋转控制
+    itemStyle: {
+        normal: {
+            // color: 各异，
+            // borderColor: 各异,     // 标注边线颜色，优先于color
+            borderWidth: 2,         // 标注边线线宽，单位px，默认为1
+            label: {
+                show: true,
+                position: &#39;inside&#39;    // 可选为&#39;left&#39;|&#39;right&#39;|&#39;top&#39;|&#39;bottom&#39;
+                // textStyle: null    // 默认使用全局文本样式，详见TEXTSTYLE
+            }
+        },
+        emphasis: {
+            // color: 各异
+            label: {
+                show: true
+                // position: &#39;inside&#39;    // &#39;left&#39;|&#39;right&#39;|&#39;top&#39;|&#39;bottom&#39;
+                // textStyle: null     // 默认使用全局文本样式，详见TEXTSTYLE
+            }
+        }
+    }
+},
+</code></pre>
+<pre><code class="js">markLine : {
+    // 标线起始和结束的symbol介绍类型，如果都一样，可以直接传string
+    symbol: [&#39;circle&#39;, &#39;arrow&#39;],
+    // 标线起始和结束的symbol大小，半宽（半径）参数，当图形为方向或菱形则总宽度为symbolSize * 2
+    symbolSize: [2, 4],
+    // 标线起始和结束的symbol旋转控制
+    //symbolRotate : null,
+    itemStyle: {
+        normal: {
+            // color: 各异,           // 标线主色，线色，symbol主色
+            // borderColor: 随color,       // 标线symbol边框颜色，优先于color
+            borderWidth: 2,          // 标线symbol边框线宽，单位px，默认为2
+            label: {
+                show: false,
+                // 可选为 &#39;start&#39;|&#39;end&#39;|&#39;left&#39;|&#39;right&#39;|&#39;top&#39;|&#39;bottom&#39;
+                position: &#39;inside&#39;,
+                textStyle: {         // 默认使用全局文本样式，详见TEXTSTYLE
+                    color: &#39;#333&#39;
+                }
+            },
+            lineStyle: {
+                // color: 随borderColor,    // 主色，线色，优先级高于borderColor和color
+                // width: 随borderWidth,    // 优先于borderWidth
+                type: &#39;solid&#39;,
+                shadowColor : &#39;rgba(0,0,0,0)&#39;, //默认透明
+                shadowBlur: 5,
+                shadowOffsetX: 3,
+                shadowOffsetY: 3
+            }
+        },
+        emphasis: {
+            // color: 各异
+            label: {
+                show: false
+                // position: &#39;inside&#39;   // &#39;left&#39;|&#39;right&#39;|&#39;top&#39;|&#39;bottom&#39;
+                // textStyle: null    // 默认使用全局文本样式，详见TEXTSTYLE
+            },
+            lineStyle : {}
+        }
+    }
+},
+
+textStyle: {
+    decoration: &#39;none&#39;,
+    fontFamily: &#39;Arial, Verdana, sans-serif&#39;,
+    fontFamily2: &#39;微软雅黑&#39;,    // IE8- 字体模糊并且不支持不同字体混排，额外指定一份
+    fontSize: 12,
+    fontStyle: &#39;normal&#39;,
+    fontWeight: &#39;normal&#39;
+},
+</code></pre>
+<h2 id="默认标志图形类型列表"><a href="#默认标志图形类型列表" class="headerlink" title="默认标志图形类型列表"></a>默认标志图形类型列表</h2><pre><code class="js">symbolList : [
+  &#39;circle&#39;, &#39;rectangle&#39;, &#39;triangle&#39;, &#39;diamond&#39;,
+  &#39;emptyCircle&#39;, &#39;emptyRectangle&#39;, &#39;emptyTriangle&#39;, &#39;emptyDiamond&#39;
+],
+loadingText : &#39;Loading...&#39;,
+// 可计算特性配置，孤岛，提示颜色
+calculable: false,                       // 默认关闭可计算特性
+calculableColor: &#39;rgba(255,165,0,0.6)&#39;,       // 拖拽提示边框颜色
+calculableHolderColor: &#39;#ccc&#39;,               // 可计算占位提示颜色
+nameConnector: &#39; &amp; &#39;,
+valueConnector: &#39; : &#39;,
+animation: true,
+animationThreshold: 2500,           // 动画元素阀值，产生的图形原素超过2500不出动画
+addDataAnimation: true,         // 动态数据接口是否开启动画效果
+animationDuration: 2000,
+animationEasing: &#39;ExponentialOut&#39;             //BounceOut
+</code></pre>
+
+        </div>
+        <!-- .entry-content -->
+        <div class="single-reward">
+          <div class="reward-open">赏<div class="reward-main">
+              <ul class="reward-row">
+                <li class="alipay-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/AliPayQR.jpg"></li>
+                <li class="wechat-code"><img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/donate/WeChanQR.jpg"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; width: 100%" class="social-share share-mobile" data-disabled="diandian, tencent"></div>
+        <footer class="post-footer">
+          <div class="post-lincenses"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="nofollow"><i class="fa fa-creative-commons" aria-hidden="true"></i> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a></div>
+          <div class="post-tags">
+          </div>
+          <div class="post-share">
+            <div class="social-share sharehidden share-component"></div>
+            <i class="iconfont show-share icon-forward"></i>
+          </div>
+        </footer><!-- .entry-footer -->
+      </article>
+      <!-- #post-## -->
+      <div class="toc-container" style="height: 1053px;">
+      <div class="toc" style="background: none;"></div>
+      </div>
+      <section class="post-squares nextprev">
+        
+          
+            <div class="post-nepre half previous">
+          
+            <a href="/2018/07/13/从零开始小程序/" rel="prev">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Previous Post</span>
+              <div class="info">
+                <h3>
+                从零开始小程序</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+        
+          
+            <div class="post-nepre half next">
+          
+            <a href="/2018/07/12/NodeJs/" rel="next">
+              <div class="background">
+                <img class="lazyload" src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/loader/orange.progress-bar-stripe-loader.svg" data-src style="width: 100%; height: 100%; object-fit: cover; pointer-events: none;" onerror="imgError(this,3)">
+              </div>
+              <span class="label">
+              Next Post</span>
+              <div class="info">
+                <h3>
+                NodeJs</h3>
+                <hr>
+              </div>
+            </a>
+          </div>
+        
+      </section>
+      
+<div id="vcomments"></div>
+<script>
+  window.onload = function(){
+      var valine = new Valine();
+      valine.init({
+        el: '#vcomments',
+        appId: "GyC3NzMvd0hT9Yyd2hYIC0MN-gzGzoHsz",
+        appKey: "mgOpfzbkHYqU92CV4IDlAUHQ",
+        path: window.location.pathname,
+        placeholder: "你是我一生只会遇见一次的惊喜 ..."
+      })
+  }
+</script>
+
+      <section class="author-profile">
+        <div class="info" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <a href class="profile gravatar"><img src itemprop="image" alt height="70" width="70"></a>
+          <div class="meta">
+            <span class="title">Author</span>
+            <h3 itemprop="name">
+            <a href itemprop="url" rel="author"></a>
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <p><i class="iconfont icon-write"></i></p>
+      </section>
+    </main><!-- #main -->
+  </div><!-- #primary -->
+</div>
+<!-- 不蒜子 网页计数器 -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    </div>    
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词...">
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            // PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+    <!-- <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 hojun<br>
+      powered_by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer> -->
+<footer id="colophon" class="site-footer" role="contentinfo">
+  <div class="site-info">
+    <div class="footertext">
+      <div class="img-preload">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/wordpress-rotating-ball-o.svg">
+        <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/other/disqus-preloader.svg">
+      </div>
+      <p style="color: #666666;">&copy 2018</p>
+    </div>
+    <div class="footer-device">
+    <p style="font-family: 'Ubuntu', sans-serif;">
+        <span style="color: #b9b9b9;">Theme <a href="https://github.com/honjun/hexo-theme-sakura" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Sakura</a> <i class="iconfont icon-sakura rotating" style="color: #ffc0cb;display:inline-block"></i> by <a href="https://2heng.xin/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Mashiro</a>&<a href="https://www.hojun.cn/" target="_blank" style="color: #b9b9b9;;text-decoration: underline dotted rgba(0, 0, 0, .1);">Hojun</a>, Powered by Hexo, Hosted by Coding Pages
+        </span>
+      </p>
+    </div>
+  </div><!-- .site-info -->
+</footer>
+
+
+
+<script type="text/javascript" src="/js/lib.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/InsightSearch.js"></script>
+<script type="text/javascript" src="/js/jquery.fancybox.min.js"></script>
+<script type="text/javascript" src="/js/zoom.min.js"></script>
+<script type="text/javascript" src="/js/sakura-app.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine@1.3.4/dist/Valine.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"close"},"windowheight":"fixed","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+} else {
+  var Poi = {"pjax":"1","movies":{"url": "https://cdn.jsdelivr.net/gh/honjun/hojun@1.2","name":"Unbroken.mp4","live":"open"},"windowheight":"auto","codelamp":"close","ajaxurl":"","order":"asc","formpostion":"bottom"};
+}
+/* ]]> */
+
+</script>
+
+    <div class="openNav no-select" style="height: 50px;">
+      <div class="iconflat no-select" style="width: 50px; height: 50px;">
+        <div class="icon"></div>
+      </div>
+      <div class="site-branding search-form-submit">
+        <i class="iconfont js-toggle-search iconsearch icon-search"></i>
+      </div>
+    </div>
+  </section>
+  <div id="mo-nav" class>
+  <div class="m-avatar">
+    <img src="https://cdn.jsdelivr.net/gh/honjun/cdn@1.6/img/custom/avatar.jpg">
+  </div>
+  <p style="text-align: center; color: #333; font-weight: 900; font-family: 'Ubuntu', sans-serif; letter-spacing: 1.5px">さくら荘そのhojun</p>
+  <p style="text-align: center; word-spacing: 20px;">
+    
+      
+        <a href="http://github.com/honjun" class="fa fa-github" target="_blank" style="color: #333; margin-left:20px"></a>
+      
+        <a href="http://weibo.com/mashirozx?is_all=1" class="fa fa-weibo" target="_blank" style="color: #dd4b39; margin-left:20px"></a>
+      
+        <a href="https://wpa.qq.com/msgrd?v=3&uin=954655431&site=qq&menu=yes" class="fa fa-qq" target="_blank" style="color: #25c6fe; margin-left:20px"></a>
+      
+    
+  </p>
+  <ul id="menu-new-1" class="menu">
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-fort-awesome faa-shake" aria-hidden="true"></i>
+            首页
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/archives">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-archive faa-shake" aria-hidden="true"></i>
+            归档
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/categories/技术/">
+                  <i class="fa fa-code" aria-hidden="true"></i>
+                  技术
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/生活/">
+                  <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                  生活
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/资源/">
+                  <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                  资源
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/随想/">
+                  <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                  随想
+                </a>
+              </li>
+            
+              <li>
+                <a href="/categories/转载/">
+                  <i class="fa fa-book" aria-hidden="true"></i>
+                  转载
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="javascript:;">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-list-ul faa-vertical" aria-hidden="true"></i>
+            清单
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/tags/悦读/">
+                  <i class="fa fa-th-list faa-bounce" aria-hidden="true"></i>
+                  书单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/bangumi/">
+                  <i class="fa fa-film faa-vertical" aria-hidden="true"></i>
+                  番组
+                </a>
+              </li>
+            
+              <li>
+                <a href="/music/">
+                  <i class="fa fa-headphones" aria-hidden="true"></i>
+                  歌单
+                </a>
+              </li>
+            
+              <li>
+                <a href="/tags/图集/">
+                  <i class="fa fa-photo" aria-hidden="true"></i>
+                  图集
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/comment/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-pencil-square-o faa-tada" aria-hidden="true"></i>
+            留言板
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/links/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-link faa-shake" aria-hidden="true"></i>
+            友人帐
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/donate/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-heart faa-pulse" aria-hidden="true"></i>
+            赞赏
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-leaf faa-wrench" aria-hidden="true"></i>
+            关于
+          </span>
+        </a>
+        
+          <ul class="sub-menu">
+            
+              <li>
+                <a href="/about/">
+                  <i class="fa fa-meetup" aria-hidden="true"></i>
+                  我？
+                </a>
+              </li>
+            
+              <li>
+                <a href="/theme-sakura/">
+                  <i class="fa iconfont icon-sakura" aria-hidden="true"></i>
+                  主题
+                </a>
+              </li>
+            
+              <li>
+                <a href="/lab/">
+                  <i class="fa fa-cogs" aria-hidden="true"></i>
+                  Lab
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li>
+        <a href="/client/">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-android faa-vertical" aria-hidden="true"></i>
+            客户端
+          </span>
+        </a>
+        
+      </li>
+    
+      <li>
+        <a href="/atom.xml">
+          <span class="faa-parent animated-hover">
+            <i class="fa  fa-rss faa-pulse" aria-hidden="true"></i>
+            RSS
+          </span>
+        </a>
+        
+      </li>
+    
+  </ul>
+  <p style="text-align: center; font-size: 13px; color: #b9b9b9;">&copy 2019 hexo-sakura</p>
+</div>
+<button onclick="topFunction()" class="mobile-cd-top" id="moblieGoTop" title="Go to top" style="display: none;"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<style>
+  .aplayer .aplayer-lrc {
+    height: 35px;
+  }
+  .aplayer .aplayer-lrc p{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18px !important;
+  }
+  .aplayer .aplayer-lrc p.aplayer-lrc-current{
+    color: orange;
+  }
+  .aplayer.aplayer-narrow .aplayer-body{
+    left: -66px !important;
+  }
+  .aplayer.aplayer-fixed .aplayer-lrc {
+    display: none;
+  }
+  .lrc-show {
+    display: block !important;
+    background: rgba(255, 255, 255, 0.8);
+  }
+</style>
+<div class="aplayer" data-id="2660651585" data-server="netease" data-type="playlist" data-fixed="true" data-order="random">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+<script>
+  $(function(){
+    $('body').on('click', '.aplayer', function(){
+      if($('.aplayer-button').hasClass('aplayer-play')) {
+        $('.aplayer-lrc').removeClass('lrc-show');
+      } else {
+        $('.aplayer-lrc').addClass('lrc-show');
+      }
+    })
+  });
+</script>
+
+</body>
+</html>
